@@ -47,8 +47,14 @@ class TableViewController: UITableViewController {
         // 셀의 데이터를 넣어 뷰를 보여지는 함수
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
 
-        cell.textLabel?.text = items[(indexPath as NSIndexPath).row]
+//        cell.textLabel?.text = items[(indexPath as NSIndexPath).row]
+//
+////        cell.imageView?.image = UIImage(named: itmesImageFile[(indexPath as NSIndexPath).row])
+//        print((indexPath as NSIndexPath).row);
+//        cell.imageView?.image = UIImage(named: itmesImageFile[(indexPath as NSIndexPath).row])
         
+        cell.textLabel?.text = items[(indexPath as NSIndexPath).row]
+        print((indexPath as NSIndexPath).row)
         cell.imageView?.image = UIImage(named: itmesImageFile[(indexPath as NSIndexPath).row])
 
         return cell

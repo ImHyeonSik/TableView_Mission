@@ -58,12 +58,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CmM-qa-ZuI">
-                                <rect key="frame" x="20" y="168" width="374" height="34"/>
+                                <rect key="frame" x="20" y="168" width="370" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ss8-Ru-fc9">
-                                <rect key="frame" x="180" y="229" width="54" height="31"/>
+                                <rect key="frame" x="180" y="229" width="50" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Jfn-hO-ssf"/>
                                 </constraints>
@@ -73,21 +73,39 @@
                                     <action selector="btnAddItem:" destination="178-bo-cBS" eventType="touchUpInside" id="xQH-aU-I7G"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJy-ba-9Pj">
+                                <rect key="frame" x="0.0" y="330" width="410" height="216"/>
+                                <connections>
+                                    <outlet property="delegate" destination="178-bo-cBS" id="TPv-ON-Ecc"/>
+                                </connections>
+                            </pickerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r0Y-Wm-fMB">
+                                <rect key="frame" x="20" y="546" width="236" height="136"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0ta-Uj-xKr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="xJy-ba-9Pj" firstAttribute="leading" secondItem="0ta-Uj-xKr" secondAttribute="leading" id="1BH-nx-vfo"/>
+                            <constraint firstItem="r0Y-Wm-fMB" firstAttribute="leading" secondItem="0ta-Uj-xKr" secondAttribute="leading" constant="20" id="8LE-3F-ydY"/>
                             <constraint firstItem="CmM-qa-ZuI" firstAttribute="leading" secondItem="0ta-Uj-xKr" secondAttribute="leading" constant="20" id="JW4-kN-bYl"/>
                             <constraint firstItem="CmM-qa-ZuI" firstAttribute="top" secondItem="0ta-Uj-xKr" secondAttribute="top" constant="80" id="Jo3-1k-2Jl"/>
+                            <constraint firstItem="xJy-ba-9Pj" firstAttribute="top" secondItem="ss8-Ru-fc9" secondAttribute="bottom" constant="70" id="Jzz-5o-pmL"/>
                             <constraint firstItem="ss8-Ru-fc9" firstAttribute="leading" secondItem="0ta-Uj-xKr" secondAttribute="leading" constant="180" id="KN2-ZG-jhf"/>
                             <constraint firstItem="ss8-Ru-fc9" firstAttribute="top" secondItem="CmM-qa-ZuI" secondAttribute="bottom" constant="27" id="SG4-RR-iUJ"/>
+                            <constraint firstAttribute="trailing" secondItem="xJy-ba-9Pj" secondAttribute="trailing" id="kTm-n1-l7d"/>
+                            <constraint firstItem="0ta-Uj-xKr" firstAttribute="trailing" secondItem="r0Y-Wm-fMB" secondAttribute="trailing" constant="154" id="lXl-It-gYP"/>
                             <constraint firstItem="0ta-Uj-xKr" firstAttribute="trailing" secondItem="ss8-Ru-fc9" secondAttribute="trailing" constant="180" id="mEx-nk-Aof"/>
+                            <constraint firstItem="r0Y-Wm-fMB" firstAttribute="top" secondItem="xJy-ba-9Pj" secondAttribute="bottom" id="okZ-t5-suQ"/>
+                            <constraint firstItem="0ta-Uj-xKr" firstAttribute="bottom" secondItem="r0Y-Wm-fMB" secondAttribute="bottom" constant="180" id="sj4-QB-ceH"/>
                             <constraint firstItem="0ta-Uj-xKr" firstAttribute="trailing" secondItem="CmM-qa-ZuI" secondAttribute="trailing" constant="20" id="wMu-Nd-gzy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add View" id="phQ-gr-ffV"/>
                     <connections>
+                        <outlet property="tfAddImage" destination="r0Y-Wm-fMB" id="9BL-1j-Up6"/>
                         <outlet property="tfAddItem" destination="CmM-qa-ZuI" id="zAH-Ow-Dl8"/>
+                        <outlet property="tfAddPicker" destination="xJy-ba-9Pj" id="Txs-3O-4Rq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGV-HM-Tpv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
